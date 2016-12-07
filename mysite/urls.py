@@ -24,7 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^accounts/logout/$', django.contrib.auth.views.logout, name='logout', kwargs={'next_page': '/'}),
-    url(r'^webapp/', include('webapp.urls')),
-    url(r'^personal/', include('personal.urls')),
     url(r'', include('polls.urls')),
 ]
