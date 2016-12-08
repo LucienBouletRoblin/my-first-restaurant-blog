@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Django blog</title>
+        <title>Restaurant-blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/polls.css' %}">
@@ -18,6 +18,9 @@
                 <p class="top-menu">Hello {{ user.username }}<small> (<a href="{% url 'logout' %}">Log out</a>)</small></p>
             {% endif %}
             <h1><a href="{% url 'post_list' %}">Restaurant-blog</a></h1>
+            {% if user.is_authenticated %}
+                <h2><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span> New post </a></h2>
+            {% endif %}
         </div>
 
         <div class="content container">

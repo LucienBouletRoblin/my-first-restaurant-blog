@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+    <h1>Create a New Account</h1>
+        {% if form.errors %}
+            <p>An error occurred</p>
+        {% endif %}
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
